@@ -24,6 +24,10 @@
 
 ifeq ($(INTEL_VA),true)
 
+ifneq ($(TARGET_BOARD_PLATFORM),clovertrail)
+
 include $(call all-subdir-makefiles)
+
+endif
 
 endif
