@@ -71,7 +71,7 @@ LOCAL_SRC_FILES := \
     tng_VP8.c \
     tng_jpegdec.c
 
-ifneq ($(filter $(TARGET_BOARD_PLATFORM),merrifield moorefield morganfield clovertrail),)
+ifneq ($(filter $(TARGET_BOARD_PLATFORM),merrifield moorefield morganfield),)
 LOCAL_SRC_FILES += \
     pnw_H263ES.c \
     pnw_H264ES.c \
@@ -131,16 +131,10 @@ LOCAL_CFLAGS += \
     -DPSBVIDEO_MRFL_VPP -DPSBVIDEO_MRFL \
     -DPSBVIDEO_VPP_TILING -DSLICE_HEADER_PARSING
 else
-ifeq ($(TARGET_BOARD_PLATFORM),clovertrail)
-LOCAL_CFLAGS += \
-    -DPSBVIDEO_MFLD \
-    -DSLICE_HEADER_PARSING
-else
 LOCAL_CFLAGS += \
     -DPSBVIDEO_MRFL_VPP \
     -DPSBVIDEO_MRFL \
     -DSLICE_HEADER_PARSING
-endif
 endif
 
 ifeq ($(TARGET_BOARD_PLATFORM),merrifield)
